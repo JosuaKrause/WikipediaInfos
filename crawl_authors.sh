@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [[ -z $1 ]]; then
+    echo "usage: $0 <category> [<page> [<depth>]]"
+    exit 1
+fi
+
 if [[ ! -z $2 ]]; then
     ./crawl.sh $2 $3
 fi

@@ -1,11 +1,15 @@
 #!/bin/sh
 
 if [[ -z $1 ]]; then
-    echo "usage: $0 <page> <depth>"
+    echo "usage: $0 <page> [<depth>]"
     exit 1
 fi
 
-depth=$(( $2 - 1 ))
+if [[ -z $2 ]]; then
+    depth=-1
+else
+    depth=$(( $2 - 1 ))
+fi
 
 if [[ ! -f pages/$1 ]]; then
     echo "fetch: $1"

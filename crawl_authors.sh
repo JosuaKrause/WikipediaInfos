@@ -6,7 +6,7 @@ if [[ -z $1 ]]; then
 fi
 
 if [[ ! -z $2 ]]; then
-    ./crawl.sh $2 $3
+    ./crawl.sh $2 $3 $1
 fi
 
 cat=$1

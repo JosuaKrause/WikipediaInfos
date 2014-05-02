@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [[ -z $1 ]]; then
-    echo "usage: $0 <page> [<depth>]"
+    echo "usage: $0 <page> [<depth>] [<category>]"
     exit 1
 fi
 
@@ -14,6 +14,13 @@ fi
 if [[ ! -f pages/$1 ]]; then
     echo "fetch: $1"
     ./get_links.py $1
+fi
+
+if [[ ! -z $3 ]]; then
+    c=`cat pages/$1 | grep $3`
+    if [[ -z $c ]]; then
+        exit 0
+    fi
 fi
 
 echo "crawl[$2]: $1"

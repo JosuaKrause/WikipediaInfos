@@ -11,15 +11,20 @@ if [[ "$(ls -A $dir)" ]]; then
     exit 1
 fi
 
-echo $dir
+echo "results in $dir"
 
 for file in authors/*; do
     f=`echo $file | grep -oE "[^/]+$"`
     while read a; do
-        if [[ ! -f $dir/$a ]]; then
-            touch $dir/$a
-        fi
-        echo $f >> $dir/$a
+        echo "$f" >> $dir/$a
     done < authors/$f
     echo "process: $f"
 done
+
+tmp=`mktemp temp.XXXX`
+for file in $dir/*; do
+    echo "sort: $file"
+    cat "$file" | sort | uniq -c | sort > $tmp
+    cat $tmp > "$file"
+done
+rm $tmp

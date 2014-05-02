@@ -1,2 +1,3 @@
-WikipediaInfos
-==============
+Wikipedia - Infos
+=================
+

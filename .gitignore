@@ -5,3 +5,5 @@ err.txt
 *.png
 /graph.csv
 /graph.csv.graphml
+/authors_pages/
+/.DS_Store

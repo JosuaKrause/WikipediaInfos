@@ -5,9 +5,7 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-test=`ls -A "authors_pages/$1" | grep "$1"`
-
-if [[ -z "$test" ]]; then
+if [[ ! -e "authors_pages/$1" ]]; then
     echo "user $1 does not exist"
     exit 1
 fi

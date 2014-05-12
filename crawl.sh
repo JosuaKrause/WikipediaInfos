@@ -16,9 +16,10 @@ if [[ ! -f pages/$1 ]]; then
     ./get_links.py $1
 fi
 
-if [[ ! -z $3 ]]; then
+if [ ! -z $3 ] && [ ! $1 = $3 ]; then
     c=`cat pages/$1 | grep $3`
     if [[ -z $c ]]; then
+        echo "$1 not in category $3"
         exit 0
     fi
 fi

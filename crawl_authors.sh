@@ -5,23 +5,31 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-if [[ ! -z $2 ]]; then
-    ./crawl.sh $2 $3 $1
+echo "begin $1"
+
+if [[ ! -z "$2" ]]; then
+    echo "crawl $2 $3 $1"
+    ./crawl.sh "$2" "$3" "$1"
 fi
+
+echo "fetching histories for $1"
 
 cat=$1
 
 for file in pages/*; do
-    f=`echo $file | grep -oE "[^/]+$"`
-    c=`cat pages/$f | grep $cat`
+    f=`echo "$file" | grep -oE "[^/]+$"`
+    c=`cat "pages/$f" | grep "$cat"`
     if [[ ! -z $c ]]; then
-        if [[ ! -f authors/$1 ]]; then
-            if [[ ! -f histories/$1 ]]; then
+        exit
+        if [[ ! -f "authors/$1" ]]; then
+            if [[ ! -f "histories/$1" ]]; then
                 echo "history: $f"
-                ./get_history.sh $f
+                ./get_history.sh "$f"
             fi
             echo "authors: $f"
-            ./get_authors.sh $f
+            ./get_authors.sh "$f"
+        else
+            echo "authors for $f already computed"
         fi
     #else
     #    echo "skipped: $f"

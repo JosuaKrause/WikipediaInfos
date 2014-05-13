@@ -14,4 +14,4 @@ if [[ ! -d authors ]]; then
     mkdir authors
 fi
 
-cat histories/$1 | grep '<username>' | sed -E "s/^[^<]*<username>([^<]*)<\/username>.*$/\1/g" | sort | uniq > authors/$1
+cat "histories/$1" | grep '<username>' | sed -E "s/^[^<]*<username>([^<]*)<\/username>.*$/\1/g" | sort | uniq > "authors/$1"

@@ -11,13 +11,13 @@ else
     depth=$(( $2 - 1 ))
 fi
 
-if [[ ! -f pages/$1 ]]; then
+if [[ ! -f "pages/$1" ]]; then
     echo "fetch: $1"
-    ./get_links.py $1
+    ./get_links.py "$1"
 fi
 
-if [ ! -z $3 ] && [ ! $1 = $3 ]; then
-    c=`cat pages/$1 | grep $3`
+if [ ! -z "$3" ] && [ ! "$1" = "$3" ]; then
+    c=`cat "pages/$1" | grep "$3"`
     if [[ -z $c ]]; then
         echo "$1 not in category $3"
         exit 0
@@ -27,11 +27,11 @@ fi
 echo "crawl[$2]: $1"
 
 while read l; do
-    if [[ ! -f pages/$l ]]; then
+    if [[ ! -f "pages/$l" ]]; then
         echo "fetch: $l"
-        ./get_links.py $l
+        ./get_links.py "$l"
     fi
     if [[ $depth -ge 0 ]]; then
-        $0 $l $depth
+        $0 "$l" "$depth"
     fi
-done < pages/$1
+done < "pages/$1"

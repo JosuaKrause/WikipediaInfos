@@ -5,4 +5,8 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-tar -zcvf $1.tar.gz histories/ && rm -r histories
+if [[ -f "$1.tar.gz" ]]; then
+    exit 0
+fi
+
+tar -zcvf "$1.tar.gz" histories/ && rm -r histories

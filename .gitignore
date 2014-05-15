@@ -9,3 +9,4 @@ err.txt
 /.DS_Store
 *.zip
 *.tar.gz
+/lookup/

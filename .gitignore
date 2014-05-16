@@ -10,3 +10,5 @@ err.txt
 *.zip
 *.tar.gz
 /lookup/
+*.csv.graphml
+*.csv

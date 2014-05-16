@@ -265,26 +265,73 @@ Edits:
 
 ./show_unique.sh -a "Category:Mathematics" | grep -v "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less
 
-     204 Michael Hardy
-     148 Rjwilmsi
-     148 Jpbowen
-     131 Charles Matthews
-     117 Ruud Koot
-     117 Rich Farmbrough
-     106 Giftlite
-      93 Miym
-      91 Woohookitty
-      91 David Eppstein
-      83 BD2412
-      82 Oleg Alexandrov
-      80 ChrisGualtieri
-      79 R'n'B
-      75 Omnipaedista
-      75 Guillaume2303
-      73 Bender235
-      72 Salix alba
-      70 Mdd
-      69 Headbomb
-      66 D6
-      65 Gregbard
-      64 Lquilter
+      40 John
+      10 Ap
+       9 Leibniz
+       7 0
+       6 Siddhant
+       5 Mac
+       4 D
+       3 as
+       3 Gauss
+       2 s
+       2 S
+       2 Peter
+       2 O
+       2 Mu
+       2 Conti
+       2 Ab
+       2 999
+       2 (
+       1 one
+       1 m
+       1 h
+       1 b
+       1 Will
+       ...
+
+./show_author.sh "John"
+
+Author: John
+Page: http://en.wikipedia.org/wiki/User:John
+Edits:
+   1 Abramowitz_and_Stegun
+   1 Categories_for_the_Working_Mathematician
+   1 Centre_Georges_Pompidou
+   1 Charles_Rennie_Mackintosh
+   1 Compilers:_Principles,_Techniques,_and_Tools
+   1 Computer_Graphics:_Principles_and_Practice
+   1 Concepts,_Techniques,_and_Models_of_Computer_Programming
+   1 Concrete_Mathematics
+   1 Constance_Kamii
+   1 Counterexamples_in_Topology
+   1 Cryptonomicon
+   1 Daniel_J._Bernstein
+   1 Discourse_on_the_Method
+   1 Disquisitiones_Arithmeticae
+   1 Dunning–Kruger_effect
+   1 Evolution_and_the_Theory_of_Games
+   1 Flatland
+   1 G._H._Hardy
+   1 Gödel,_Escher,_Bach
+   1 Introduction_to_Automata_Theory,_Languages,_and_Computation
+   1 John_G._Kemeny
+   1 John_Ruskin
+   1 Lions'_Commentary_on_UNIX_6th_Edition,_with_Source_Code
+   1 Martin_Gardner
+   1 Measuring_the_World
+   1 Opticks
+   1 Persian_literature
+   1 Prime_Obsession
+   1 Public_administration
+   1 Structure_and_Interpretation_of_Computer_Programs
+   1 The_Annotated_Turing
+   1 The_Art_of_Computer_Programming
+   1 The_Emperor's_New_Mind
+   1 The_Music_of_the_Primes
+   1 Theory_of_Games_and_Economic_Behavior
+   1 Two_New_Sciences
+   1 aristocracy
+   1 culture_of_India
+   1 fashion_design
+   1 mathematics_education

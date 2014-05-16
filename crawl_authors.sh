@@ -20,7 +20,6 @@ for file in pages/*; do
     f=`echo "$file" | grep -oE "[^/]+$"`
     c=`cat "pages/$f" | grep "$cat"`
     if [[ ! -z $c ]]; then
-        exit
         if [[ ! -f "authors/$1" ]]; then
             if [[ ! -f "histories/$1" ]]; then
                 echo "history: $f"

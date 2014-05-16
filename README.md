@@ -261,3 +261,30 @@ Edits:
    1 Journal_of_Statistical_Software
 
 ./show_page.sh "Journal_of_Artificial_Intelligence_Research"
+
+
+./show_unique.sh -a "Category:Mathematics" | grep -v "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less
+
+     204 Michael Hardy
+     148 Rjwilmsi
+     148 Jpbowen
+     131 Charles Matthews
+     117 Ruud Koot
+     117 Rich Farmbrough
+     106 Giftlite
+      93 Miym
+      91 Woohookitty
+      91 David Eppstein
+      83 BD2412
+      82 Oleg Alexandrov
+      80 ChrisGualtieri
+      79 R'n'B
+      75 Omnipaedista
+      75 Guillaume2303
+      73 Bender235
+      72 Salix alba
+      70 Mdd
+      69 Headbomb
+      66 D6
+      65 Gregbard
+      64 Lquilter

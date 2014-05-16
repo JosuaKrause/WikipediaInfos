@@ -43,8 +43,17 @@ function authors() {
     done
 }
 
+function real_authors() {
+    for author in `authors $1 | sort | uniq`; do
+        c=` echo "$author" | ./show_author_cat.sh 2> /dev/null | grep "$1" 2> /dev/null `
+        if [[ ! -z $c ]]; then
+            echo "$author"
+        fi
+    done
+}
+
 if [[ "$show_authors" == "1" ]]; then
-    authors "$1" | sort | uniq
+    real_authors "$1" | sort | uniq
 else
     common "$1"
 fi

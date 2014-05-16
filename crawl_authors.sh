@@ -20,8 +20,8 @@ for file in pages/*; do
     f=`echo "$file" | grep -oE "[^/]+$"`
     c=`cat "pages/$f" | grep "$cat"`
     if [[ ! -z $c ]]; then
-        if [[ ! -f "authors/$1" ]]; then
-            if [[ ! -f "histories/$1" ]]; then
+        if [[ ! -f "authors/$f" ]]; then
+            if [[ ! -f "histories/$f" ]]; then
                 echo "history: $f"
                 ./get_history.sh "$f"
             fi

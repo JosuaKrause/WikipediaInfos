@@ -57,6 +57,34 @@ Wikipedia - Infos
 
 ./find_authors.sh | grep "[Bb][Oo][Tt]" | ./get_authors_count.sh | wc -l
 
+    395
+
+./find_authors.sh | grep "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less
+
+     556 Addbot
+     411 SmackBot
+     289 Yobot
+     286 Cydebot
+     218 Luckas-bot
+     213 EmausBot
+     190 ClueBot NG
+     183 Helpful Pixie Bot
+     171 Lightbot
+     169 ZéroBot
+     169 AnomieBOT
+     150 FrescoBot
+     147 Xqbot
+     142 YurikBot
+     141 RussBot
+     140 TXiKiBoT
+     134 ClueBot
+     126 VolkovBot
+     113 RjwilmsiBot
+     106 Thijs!bot
+     105 Bluebot
+     100 Chobot
+      97 SieBot
+
 ./show_author_count.sh 1 "[Bb][Oo][Tt]" | less
 
 ./show_author_count.sh 1 "[Bb][Oo][Tt]" | wc -l
@@ -142,6 +170,35 @@ Edits:
    1 Bob_Sproull
    ...
 
+./show_author.sh "Rjwilmsi"
+
+Author: Rjwilmsi
+Page: http://en.wikipedia.org/wiki/User:Rjwilmsi
+Edits:
+   1 ACM_Computing_Surveys
+   1 ACM_Multimedia
+   1 ACM_Transactions_on_Database_Systems
+   1 ACM_Transactions_on_Graphics
+   1 Abramowitz_and_Stegun
+   1 American_Journal_of_Mathematics
+   1 Annales_Henri_Poincaré
+   1 Annals_of_Mathematics
+   1 Annunciation_(van_Eyck,_Washington)
+   1 Anti-racism_in_mathematics_teaching
+   1 Arcadia_(play)
+   1 Ars_Conjectandi
+   1 Artificial_Intelligence_(journal)
+   1 Association_for_the_Advancement_of_Artificial_Intelligence
+   1 Association_of_University_Technology_Managers
+   1 Bakhshali_manuscript
+   1 Banach–Tarski_paradox
+   1 Bell_Labs
+   1 Brazilian_Carnival
+   1 British_Computer_Society
+   ...
+
+./show_author.sh "Rjwilmsi" | tail -n +3 | sed 's/^ *//' | cut -d' ' -f2 | ./show_author_cat.sh | sort -u
+
 ./show_page.sh "Banach–Tarski_paradox"
 
 Page: Banach–Tarski_paradox
@@ -202,3 +259,5 @@ Edits:
    1 Journal_of_Artificial_Intelligence_Research
    1 Journal_of_Machine_Learning_Research
    1 Journal_of_Statistical_Software
+
+./show_page.sh "Journal_of_Artificial_Intelligence_Research"

@@ -11,3 +11,10 @@
 ./compact.sh Mathematics
 ./crawl_authors.sh "Category:Cryptography" "Category:Cryptography" 2
 ./compact.sh Cryptography
+
+./create_backlinks.sh
+./show_cat.sh "Category:Social_sciences"
+./show_cat.sh "Category:Computer_science"
+./show_cat.sh "Category:Arts"
+./show_cat.sh "Category:Mathematics"
+./show_cat.sh "Category:Cryptography"

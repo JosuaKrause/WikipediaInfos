@@ -18,7 +18,7 @@ if os.path.isfile(outf):
     exit(0)
 
 err = open("err.txt", "a")
-out = check_output(["curl", "http://en.wikipedia.org/w/index.php?title=Special:Export&action=submit&pages="+sys.argv[1]], stderr=err)
+out = check_output(["curl", http://en.wikipedia.org/w/index.php?title=Special:Export&action=submit&pages="+sys.argv[1]], stderr=err)
 
 it = out.find("<text")
 if it < 0:

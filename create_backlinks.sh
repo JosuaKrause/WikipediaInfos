@@ -6,7 +6,7 @@ if [[ ! -d $dir ]]; then
     mkdir $dir
 fi
 
-if [[ "$(ls -A $dir)" ]]; then
+if [[ "$(ls $dir)" ]]; then
     echo "warning: $dir is not empty!"
     exit 1
 fi

@@ -14,4 +14,4 @@ if [[ -f "histories/$1" ]]; then
     exit 0
 fi
 
-curl "http://en.wikipedia.org/w/index.php?title=Special:Export&pages=$1&history&action=submit" 2>> err.txt 1> "histories/$1"
+curl -m 120 "http://en.wikipedia.org/w/index.php?title=Special:Export&pages=$1&history&action=submit" 2>> err.txt 1> "histories/$1"

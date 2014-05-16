@@ -17,4 +17,4 @@ function page() {
     cat "authors/$1"
 }
 
-page "$1" | less
+page "$1"

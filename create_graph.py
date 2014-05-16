@@ -5,15 +5,15 @@ import re
 import os
 from subprocess import check_output
 
-if len(sys.argv) < 2 || len(sys.argv) > 3:
+if len(sys.argv) < 2 or len(sys.argv) > 3:
     print "usage: "+sys.argv[0]+" <output> [<filter>]"
     exit(1)
 
 outf = sys.argv[1]
 
-if len(sys.argv >= 3):
-    fil = sys.argv[2]
-else
+if len(sys.argv) >= 3:
+    fil = sys.argv[2].lower()
+else:
     fil = ""
 
 matrix = {}
@@ -22,10 +22,10 @@ for f in os.listdir("authors"):
     lines = set(a.readlines())
     a.close()
     for line in lines:
-        if fil && (line.find(fil) >= 0):
+        if fil and (line.lower().find(fil) >= 0):
             continue
         for other in lines:
-            if fil && (other.find(fil) >= 0):
+            if fil and (other.lower().find(fil) >= 0):
                 continue
             if line != other:
                 if line < other:

@@ -16,6 +16,7 @@ if len(sys.argv) >= 3:
 else:
     fil = ""
 
+count = {}
 matrix = {}
 for f in os.listdir("authors"):
     a = open("authors/" + f, "r")
@@ -24,6 +25,10 @@ for f in os.listdir("authors"):
     for line in lines:
         if fil and (line.lower().find(fil) >= 0):
             continue
+        if line not in count:
+            count[line] = 1
+        else:
+            count[line] = count[line] + 1
         for other in lines:
             if fil and (other.lower().find(fil) >= 0):
                 continue
@@ -43,7 +48,11 @@ for f in os.listdir("authors"):
 
 o = open(outf, "w")
 for (k1, row) in matrix.items():
+    if count[k1] > 9:
+        continue
     for (k2, value) in row.items():
+        if count[k2] > 9:
+            continue
         if value > 5:
             o.write('"' + k1.strip() + '";"' + k2.strip() + '";"' + str(value) + '"\n')
 

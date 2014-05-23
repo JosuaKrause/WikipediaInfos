@@ -386,3 +386,8 @@ Shows all articles edited by John.
        1 culture_of_India
        1 fashion_design
        1 mathematics_education
+
+Creates a csv file graph_math.csv that contains a link list with edge weights
+for a co-authorship graph. All bots are excluded.
+
+`./create_graph.py graph_math.csv bot`

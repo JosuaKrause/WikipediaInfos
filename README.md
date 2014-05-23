@@ -37,6 +37,8 @@ sorted by the number of distinct articles the users edited.
       36 Tobias Bergemann
       ...
 
+Sorts all authors that are not bots descending by the number of distinct edited articles.
+
 `./find_authors.sh | grep -v "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less`
 
      204 Michael Hardy
@@ -64,9 +66,13 @@ sorted by the number of distinct articles the users edited.
       64 Lquilter
       ...
 
+Counts the number of bots.
+
 `./find_authors.sh | grep "[Bb][Oo][Tt]" | ./get_authors_count.sh | wc -l`
 
     395
+
+Shows the number of distinct articles edited by the bots sorted descending by this number.
 
 `./find_authors.sh | grep "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less`
 
@@ -94,13 +100,22 @@ sorted by the number of distinct articles the users edited.
      100 Chobot
       97 SieBot
 
+Shows all authors that edited at most one distinct article and excludes all bots.
+
 `./show_author_count.sh 1 "[Bb][Oo][Tt]" | less`
+
+Counts all authors that edited at most one distinct article excluding all bots.
 
 `./show_author_count.sh 1 "[Bb][Oo][Tt]" | wc -l`
 
    16431
 
+Computes the maximal number of distinct articles edited by one user that is not a bot.
+The zero is used to create no output by excluding all authors from the output list.
+
 `./show_author_count.sh -m 0 "[Bb][Oo][Tt]"`
+
+Sorts all authors by the number of distinct edited articles.
 
 `./find_authors.sh | ./get_authors_count.sh | sort -gr | less`
 
@@ -152,6 +167,8 @@ sorted by the number of distinct articles the users edited.
       73 Bender235
       ...
 
+Shows the author Michael Hardy.
+
 `./show_author.sh "Michael Hardy"`
 
     Author: Michael Hardy
@@ -178,6 +195,8 @@ sorted by the number of distinct articles the users edited.
        1 Bell_Labs
        1 Bob_Sproull
        ...
+
+Shows the author Rjwilmsi
 
 `./show_author.sh "Rjwilmsi"`
 
@@ -206,7 +225,12 @@ sorted by the number of distinct articles the users edited.
        1 British_Computer_Society
        ...
 
+Shows the categories of the articles edited by Rjwilmsi. The part before
+`./show_author_cat.sh` extracts the articles edited by this user.
+
 `./show_author.sh "Rjwilmsi" | tail -n +3 | sed 's/^ *//' | cut -d' ' -f2 | ./show_author_cat.sh | sort -u`
+
+Shows the authors that edited the article Banach–Tarski_paradox.
 
 `./show_page.sh "Banach–Tarski_paradox"`
 
@@ -235,9 +259,14 @@ sorted by the number of distinct articles the users edited.
     Auric
     ...
 
+Shows the category of the article Banach–Tarski_paradox.
+
 `./find_cat.sh "Banach–Tarski_paradox"`
 
     Category:Mathematics
+
+Shows the categories of the articles edited by Michael Hardy. The part before
+`./show_author_cat.sh` extracts the articles edited by this user.
 
 `./show_author.sh "Michael Hardy" | tail -n +3 | sed 's/^ *//' | cut -d' ' -f2 | ./show_author_cat.sh | sort -u`
 
@@ -245,9 +274,14 @@ sorted by the number of distinct articles the users edited.
     Category:Mathematics
     Category:Social_sciences
 
+Shows the categories of the articles edited by ABCD. The part before
+`./show_author_cat.sh` extracts the articles edited by this user.
+
 `./show_author.sh "ABCD" | tail -n +3 | sed 's/^ *//' | cut -d' ' -f2 | ./show_author_cat.sh | sort -u`
 
     Category:Mathematics
+
+Shows the articles edited by Free Software Knight.
 
 `./show_author.sh "Free Software Knight"`
 
@@ -259,6 +293,8 @@ sorted by the number of distinct articles the users edited.
        1 Journal_of_Statistical_Software
        1 List_of_numerical_analysis_software
 
+Shows the articles edited by Acs4b.
+
 `./show_author.sh "Acs4b"`
 
     Author: Acs4b
@@ -269,7 +305,12 @@ sorted by the number of distinct articles the users edited.
        1 Journal_of_Machine_Learning_Research
        1 Journal_of_Statistical_Software
 
+Shows the authors that edited Journal_of_Artificial_Intelligence_Research.
+
 `./show_page.sh "Journal_of_Artificial_Intelligence_Research"`
+
+Shows the authors that only edited articles in the category Mathematics and are not
+bots. Note that this operation takes a while.
 
 `./show_unique.sh -a "Category:Mathematics" | grep -v "[Bb][Oo][Tt]" | ./get_authors_count.sh | sort -gr | less`
 
@@ -297,6 +338,8 @@ sorted by the number of distinct articles the users edited.
        1 b
        1 Will
        ...
+
+Shows all articles edited by John.
 
 `./show_author.sh "John"`
 

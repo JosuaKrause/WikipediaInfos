@@ -12,3 +12,7 @@ err.txt
 /lookup/
 *.csv.graphml
 *.csv
+/compsci.txt
+/maths.txt
+/social.txt
+/writeup.txt
